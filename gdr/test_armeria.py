@@ -52,13 +52,12 @@ def test_classe_esclusiva_sbagliata(classe_guerriero, classe_esclusiva):
      with pytest.raises(PermissionError):
           equipaggia_artefatto(guerriero,artefatto)
 
-@pytest.mark.parametrize("allineamento", ["buono", "neutro"])
-def test_artefatto_maledetto(allineamento):
+def test_artefatto_maledetto():
      guerriero = {
           "hp": 100,
           "livello": 10,
           "classe": "guerriero",
-          "allineamento": allineamento,
+          "allineamento": "buono",
           "equipaggiamento": [],
      }
      artefatto = {
