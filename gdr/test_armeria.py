@@ -47,8 +47,8 @@ def test_classe_esclusiva_sbagliata(classe_guerriero, classe_esclusiva):
      artefatto = {
           "nome": "Spada",
           "livello_minimo": 1,
-          "classe_esclusiva": None,
-          "maledetto": True
+          "classe_esclusiva": classe_esclusiva,
+     
      }
      with pytest.raises(PermissionError):
           equipaggia_artefatto(guerriero,artefatto)
