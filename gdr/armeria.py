@@ -10,7 +10,7 @@ def equipaggia_artefatto(guerriero: dict, artefatto: dict) -> str:
     if artefatto.get("classe_esclusiva") and guerriero["classe"] != artefatto["classe_esclusiva"]:
         raise PermissionError(f"Questo oggetto è riservato alla classe {artefatto['classe_esclusiva']}.")
 
-    if artefatto.get("maledetto", False) and guerriero["allineamento"] == "buono":
+    if artefatto.get("maledetto", False) and guerriero["allineamento"] != "malvagio":
         return "L'artefatto brucia! Equipaggiamento fallito."
 
     guerriero["equipaggiamento"].append(artefatto["nome"])
